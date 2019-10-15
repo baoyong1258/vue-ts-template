@@ -2,11 +2,24 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/about">About</router-link> |
+      <router-link to="/template">Template</router-link> |
+      <router-link to="/message">Message</router-link>
     </div>
     <router-view/>
   </div>
 </template>
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
+@Component({
+    components: {
+    }
+})
+export default class App extends Vue {
+  private trigger: Trigger;
+}
+</script>
+
 
 <style lang="scss">
 #app {
@@ -22,7 +35,8 @@
     font-weight: bold;
     color: #2c3e50;
     &.router-link-exact-active {
-      color: #42b983;
+      // color: #42b983;
+      color: $pink;
     }
   }
 }
